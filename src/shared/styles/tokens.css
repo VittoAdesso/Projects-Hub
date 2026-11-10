@@ -1,0 +1,92 @@
+:root {
+  /* Surface & Base */
+  --background: #faf8f5;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --surface-border: #e7e5e4;
+  --surface-hover: #f5f4f0;
+
+  /* Muted & Accents */
+  --muted: #f4f2ee;
+  --muted-foreground: #78716c;
+
+  /* Primary / Tool Accent (default neutral-editorial) */
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --ring: #2563eb;
+
+  /* Feedback */
+  --success: #15803d;
+  --success-foreground: #ffffff;
+  --error: #b91c1c;
+
+  /* Geometry & Shadows */
+  --radius: 0.625rem;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+  /* Typography */
+  --font-sans: 'Inter Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.dark {
+  /* Surface & Base */
+  --background: #0f0e0d;
+  --foreground: #f5f5f4;
+  --surface: #191715;
+  --surface-border: #292523;
+  --surface-hover: #23201d;
+
+  /* Muted & Accents */
+  --muted: #242220;
+  --muted-foreground: #a8a29e;
+
+  /* Primary / Tool Accent (default neutral-editorial) */
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(59, 130, 246, 0.15);
+  --ring: #60a5fa;
+
+  /* Feedback */
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --error: #ef4444;
+
+  /* Geometry & Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}
+
+/* Tool accent customization hook: .tool-<id> */
+.tool-ejemplo {
+  --accent: #0d9488;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(13, 148, 136, 0.1);
+  --ring: #0d9488;
+}
+
+.dark .tool-ejemplo {
+  --accent: #14b8a6;
+  --accent-foreground: #042f2e;
+  --accent-soft: rgba(20, 184, 166, 0.2);
+  --ring: #2dd4bf;
+}
+
+.tool-dispaccio {
+  --accent: #8b2332;
+  --accent-foreground: #fbf7ef;
+  --accent-soft: rgba(139, 35, 50, 0.08);
+  --ring: #8b2332;
+}
+
+.dark .tool-dispaccio {
+  --accent: #c44a57;
+  --accent-foreground: #fbf7ef;
+  --accent-soft: rgba(196, 74, 87, 0.16);
+  --ring: #c44a57;
+}
