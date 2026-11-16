@@ -32,7 +32,7 @@ export const DecisionView: React.FC<DecisionViewProps> = ({ onNavigate }) => {
           No todo debe automatizarse. El 100% no siempre es el objetivo.
         </p>
         <div className="card bg-[var(--pm-surface,#ffffff)] border-2 border-[var(--pm-accent-line,rgba(79,70,229,0.2))] rounded-[var(--radius-xl,16px)] p-6 sm:p-8 shadow-sm">
-          <Chip variant="default" className="mb-3">
+          <Chip variant="accent" className="mb-3">
             Principio de diseño
           </Chip>
           <p className="font-serif text-xl sm:text-2xl font-bold leading-snug text-[var(--pm-ink,#1a1714)] my-3.5">
@@ -119,7 +119,7 @@ export const DecisionView: React.FC<DecisionViewProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <Callout variant="accent" className="mt-5">
+          <Callout variant="tip" className="mt-5">
             Este modelo es más estable que intentar automatizar decisiones que cambian constantemente.
           </Callout>
         </div>
@@ -154,21 +154,21 @@ export const DecisionView: React.FC<DecisionViewProps> = ({ onNavigate }) => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-4 sm:p-5 shadow-sm">
-            <Chip variant="destructive">Rojo</Chip>
+            <Chip variant="red">Rojo</Chip>
             <p className="mt-2.5 mb-0 text-sm leading-relaxed text-[var(--pm-ink-2,#5c5650)]">
               Producción parada · error operativo · riesgo financiero o legal
             </p>
           </div>
 
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-4 sm:p-5 shadow-sm">
-            <Chip variant="warning">Naranja</Chip>
+            <Chip variant="amber">Naranja</Chip>
             <p className="mt-2.5 mb-0 text-sm leading-relaxed text-[var(--pm-ink-2,#5c5650)]">
               Mejora relevante · reduce trabajo manual · evolutivo importante
             </p>
           </div>
 
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-4 sm:p-5 shadow-sm">
-            <Chip variant="success">Verde</Chip>
+            <Chip variant="green">Verde</Chip>
             <p className="mt-2.5 mb-0 text-sm leading-relaxed text-[var(--pm-ink-2,#5c5650)]">
               Idea · optimización · deseable
             </p>
