@@ -1,4 +1,4 @@
-import type { GroupDefinition, SpecialKind, TopicId, WindowDays } from '../types';
+import type { GroupDefinition, SpecialKind, TopicId } from '../types';
 
 export const VER = 'v2.2';
 

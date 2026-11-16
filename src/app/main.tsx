@@ -4,6 +4,9 @@ import '@fontsource-variable/inter';
 import '@fontsource/newsreader/400.css';
 import '@fontsource/newsreader/600.css';
 import '@fontsource/newsreader/700.css';
+import '@fontsource/fraunces/index.css';
+import '@fontsource-variable/manrope/index.css';
+import '@fontsource/jetbrains-mono/index.css';
 import '@/shared/styles/globals.css';
 import { App } from './App';
 

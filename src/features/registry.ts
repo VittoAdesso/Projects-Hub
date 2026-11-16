@@ -22,6 +22,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./dispaccio')),
   },
   {
+    id: 'manual-pm',
+    name: 'Manual PM',
+    shortDescription:
+      'Manual operativo del gestor de proyectos: 9 fases obligatorias, toma de decisiones, protocolo de incidencias y 12 plantillas.',
+    route: '/manual-pm',
+    category: 'Metodología & Operaciones',
+    badge: 'Manual v5',
+    component: lazy(() => import('./manual-pm')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:

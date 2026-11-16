@@ -19,6 +19,9 @@
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
   --font-mono: var(--font-mono);
+  --font-fraunces: var(--font-fraunces);
+  --font-manrope: var(--font-manrope);
+  --font-jetbrains: var(--font-jetbrains);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
