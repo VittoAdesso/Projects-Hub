@@ -52,6 +52,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./guia-coe')),
   },
   {
+    id: 'mapa-riesgo',
+    name: 'Mapa de Riesgo de Continuidad del CoE',
+    shortDescription:
+      'Calculadora y mapa de calor de continuidad operativa (bus factor): detecta procesos frágiles o dependientes de una sola persona y prioriza acciones.',
+    route: '/mapa-riesgo',
+    category: 'Gobernanza & Operaciones',
+    badge: 'Continuidad',
+    component: lazy(() => import('./mapa-riesgo')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
