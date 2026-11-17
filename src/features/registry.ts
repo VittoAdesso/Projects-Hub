@@ -92,6 +92,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./supervisor-codigo')),
   },
   {
+    id: 'gobierno-agentes',
+    name: 'Centro de Gobierno de Agentes de IA',
+    shortDescription:
+      'Inventario de agentes de IA, clasificación automática de riesgo, controles obligatorios por nivel, evaluación antes de publicar y panel del comité.',
+    route: '/gobierno-agentes',
+    category: 'Gobernanza & Operaciones',
+    badge: 'Gobierno IA',
+    component: lazy(() => import('./gobierno-agentes')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
