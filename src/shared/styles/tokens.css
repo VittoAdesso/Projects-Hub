@@ -34,6 +34,8 @@
   --font-fraunces: 'Fraunces', Georgia, serif;
   --font-manrope: 'Manrope Variable', 'Manrope', system-ui, sans-serif;
   --font-jetbrains: 'JetBrains Mono', monospace;
+  --font-instrument: 'Instrument Sans', system-ui, sans-serif;
+  --font-schibsted: 'Schibsted Grotesk', system-ui, sans-serif;
 }
 
 .dark {
@@ -207,4 +209,71 @@
   --rg-bad: #ff8a80;
   --rg-bad-bg: rgba(255, 138, 128, 0.12);
   --rg-code: #222c3a;
+}
+
+.tool-guia-coe {
+  font-family: var(--font-instrument);
+  --background: #F4F6F8;
+  --foreground: #16222E;
+  --surface: #ffffff;
+  --surface-border: #D7DEE5;
+  --surface-hover: #eaeef2;
+  --muted: #eef2f6;
+  --muted-foreground: #52616F;
+
+  --accent: #2563A8;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(37, 99, 168, 0.1);
+  --ring: #2563A8;
+
+  --coe-bg: #F4F6F8;
+  --coe-sf: #ffffff;
+  --coe-ink: #16222E;
+  --coe-mut: #52616F;
+  --coe-ln: #D7DEE5;
+  --coe-bl: #2563A8;
+  --coe-gr: #2E7D52;
+  --coe-or: #C2561C;
+  --coe-pu: #6A4BB5;
+
+  --coe-hero-bg: #16222E;
+  --coe-hero-fg: #ffffff;
+  --coe-hero-sub: #D5DEE7;
+
+  --coe-warn-bg: #FBEADF;
+  --coe-raci-a: #E3EEF9;
+  --coe-raci-r: #E4F3EA;
+}
+
+.dark .tool-guia-coe {
+  --background: #0f161e;
+  --foreground: #e6edf5;
+  --surface: #17212d;
+  --surface-border: #283647;
+  --surface-hover: #1e2b3a;
+  --muted: #1b2735;
+  --muted-foreground: #96a7b8;
+
+  --accent: #60a5fa;
+  --accent-foreground: #0f161e;
+  --accent-soft: rgba(96, 165, 250, 0.16);
+  --ring: #60a5fa;
+
+  --coe-bg: #0f161e;
+  --coe-sf: #17212d;
+  --coe-ink: #e6edf5;
+  --coe-mut: #96a7b8;
+  --coe-ln: #283647;
+  --coe-bl: #60a5fa;
+  --coe-gr: #4ade80;
+  --coe-or: #fb923c;
+  --coe-pu: #a78bfa;
+
+  --coe-hero-bg: #1c2a3a;
+  --coe-hero-fg: #f8fafc;
+  --coe-hero-sub: #cbd5e1;
+
+  --coe-warn-bg: rgba(251, 146, 60, 0.14);
+  --coe-raci-a: rgba(96, 165, 250, 0.18);
+  --coe-raci-r: rgba(74, 222, 128, 0.18);
 }

@@ -42,6 +42,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./refactoring-guru')),
   },
   {
+    id: 'guia-coe',
+    name: 'Guía del CoE Integrado',
+    shortDescription:
+      'Guía operativa y asistente interactivo para diseñar un Centro de Excelencia integrado entre varias áreas: modelos, método en 6 fases, matriz RACI y madurez.',
+    route: '/guia-coe',
+    category: 'Gobernanza & Operaciones',
+    badge: 'Guía CoE',
+    component: lazy(() => import('./guia-coe')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:

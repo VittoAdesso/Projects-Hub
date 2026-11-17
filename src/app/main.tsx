@@ -7,6 +7,11 @@ import '@fontsource/newsreader/700.css';
 import '@fontsource/fraunces/index.css';
 import '@fontsource-variable/manrope/index.css';
 import '@fontsource/jetbrains-mono/index.css';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
+import '@fontsource/instrument-sans/600.css';
+import '@fontsource/schibsted-grotesk/600.css';
+import '@fontsource/schibsted-grotesk/700.css';
 import '@/shared/styles/globals.css';
 import { App } from './App';
 

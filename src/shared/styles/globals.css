@@ -22,6 +22,8 @@
   --font-fraunces: var(--font-fraunces);
   --font-manrope: var(--font-manrope);
   --font-jetbrains: var(--font-jetbrains);
+  --font-instrument: var(--font-instrument);
+  --font-schibsted: var(--font-schibsted);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
