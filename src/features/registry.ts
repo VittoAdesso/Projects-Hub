@@ -82,6 +82,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./guia-lead')),
   },
   {
+    id: 'supervisor-codigo',
+    name: 'Supervisor de Arquitectura Modular y Código Limpio',
+    shortDescription:
+      'Auditoría interactiva ponderada de 43 criterios en 8 áreas con semáforo de salud, puntos urgentes, preguntas para el equipo y guía de referencia.',
+    route: '/supervisor-codigo',
+    category: 'Arquitectura & Código Limpio',
+    badge: 'Auditoría',
+    component: lazy(() => import('./supervisor-codigo')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
