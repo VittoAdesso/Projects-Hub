@@ -62,6 +62,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./mapa-riesgo')),
   },
   {
+    id: 'priorizador-roi',
+    name: 'Priorizador de Demanda y ROI del CoE',
+    shortDescription:
+      'Priorizador cuantitativo de iniciativas con cálculo de ahorro anual, amortización, matriz SVG de valor frente a esfuerzo y resumen para dirección.',
+    route: '/priorizador-roi',
+    category: 'Gobernanza & Operaciones',
+    badge: 'Priorización & ROI',
+    component: lazy(() => import('./priorizador-roi')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
