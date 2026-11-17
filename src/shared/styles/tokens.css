@@ -775,3 +775,54 @@
   --gpp-am: #f0b95a;
   --gpp-code: #222c3a;
 }
+
+.tool-documentacion-patrones {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  --background: #f2f5f9;
+  --foreground: #16202e;
+  --surface: #ffffff;
+  --surface-border: #d9e0ea;
+  --surface-hover: #eaeff6;
+  --muted: #eceff5;
+  --muted-foreground: #5a6778;
+
+  --accent: #5b34c7;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(91, 52, 199, 0.12);
+  --ring: #5b34c7;
+
+  --dp-bg: #f2f5f9;
+  --dp-card: #ffffff;
+  --dp-ink: #16202e;
+  --dp-mut: #5a6778;
+  --dp-line: #d9e0ea;
+  --dp-acc: #5b34c7;
+  --dp-ok: #0e8a6b;
+  --dp-bad: #b3261e;
+  --dp-code: #eceff5;
+}
+
+.dark .tool-documentacion-patrones {
+  --background: #10151d;
+  --foreground: #e8edf4;
+  --surface: #18202b;
+  --surface-border: #2a3544;
+  --surface-hover: #1e2836;
+  --muted: #222c3a;
+  --muted-foreground: #9aa7b8;
+
+  --accent: #a98bff;
+  --accent-foreground: #10151d;
+  --accent-soft: rgba(169, 139, 255, 0.16);
+  --ring: #a98bff;
+
+  --dp-bg: #10151d;
+  --dp-card: #18202b;
+  --dp-ink: #e8edf4;
+  --dp-mut: #9aa7b8;
+  --dp-line: #2a3544;
+  --dp-acc: #a98bff;
+  --dp-ok: #3dd0a6;
+  --dp-bad: #ff8a80;
+  --dp-code: #222c3a;
+}

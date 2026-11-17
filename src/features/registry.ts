@@ -132,6 +132,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./guia-power-platform')),
   },
   {
+    id: 'documentacion-patrones',
+    name: 'Documentación y Patrones de Diseño',
+    shortDescription:
+      'Ruta guiada de 7 módulos sobre documentación técnica (ADR, README, diagramas) y patrones de diseño en la nube y Power Automate, con plantillas copiables.',
+    route: '/documentacion-patrones',
+    category: 'Arquitectura & Código Limpio',
+    badge: 'ADR & Patrones',
+    component: lazy(() => import('./documentacion-patrones')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
