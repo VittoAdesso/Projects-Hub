@@ -102,6 +102,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./gobierno-agentes')),
   },
   {
+    id: 'chuleta-stack',
+    name: 'Mi Stack Tecnológico: Chuleta',
+    shortDescription:
+      'Chuleta interactiva de Power Platform, RPA y desarrollo full-stack: capas del vehículo, selector según necesidad, flujos, SQL y glosario.',
+    route: '/chuleta-stack',
+    category: 'Arquitectura & Código Limpio',
+    badge: 'Chuleta Stack',
+    component: lazy(() => import('./chuleta-stack')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
