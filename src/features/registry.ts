@@ -72,6 +72,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./priorizador-roi')),
   },
   {
+    id: 'guia-lead',
+    name: 'Guía del Lead de IA, Automatización y Desarrollo',
+    shortDescription:
+      'Mapa interactivo de 24 competencias en 4 rutas, autoevaluación de madurez en 4 pilares (N0–N5) y resumen automático para dirección.',
+    route: '/guia-lead',
+    category: 'Gobernanza & Operaciones',
+    badge: 'Mapa del Lead',
+    component: lazy(() => import('./guia-lead')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
