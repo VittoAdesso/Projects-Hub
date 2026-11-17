@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import fs from 'fs';
-import path from 'path';
 import vm from 'vm';
+import { resolveLegacyFile } from './setup';
 import { buildPrompt, pComb } from '@/features/dispaccio/prompts/builders';
 import { DAYS } from '@/features/dispaccio/data/constants';
 import type { HorizonIndex, Lang, TopicId, WindowIndex } from '@/features/dispaccio/types';
@@ -21,7 +21,7 @@ describe('Dispaccio Prompt Builders Parity Test', () => {
   let legacyEnv: LegacyEnv;
 
   beforeAll(() => {
-    const legacyPath = path.resolve(process.cwd(), 'legacy/dispaccio-v2.html');
+    const legacyPath = resolveLegacyFile('dispaccio-v2.html');
     const htmlContent = fs.readFileSync(legacyPath, 'utf8');
     const scriptMatch = htmlContent.match(/<script>([\s\S]*?)<\/script>/);
 

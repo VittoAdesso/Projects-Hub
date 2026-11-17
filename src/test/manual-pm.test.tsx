@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import fs from 'fs';
-import path from 'path';
+import { resolveLegacyFile } from './setup';
 import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ManualPmView } from '@/features/manual-pm/views/ManualPmView';
 import { TEMPLATES } from '@/features/manual-pm/data/templates';
@@ -35,7 +35,7 @@ describe('Manual PM - Parity & Functionality Tests', () => {
 
   // 1. Text parity between legacy HTML templates and modern TEMPLATES data
   it('las 12 plantillas coinciden exactamente con el texto del HTML original', () => {
-    const legacyPath = path.resolve(process.cwd(), 'legacy/manual-pm_v5.html');
+    const legacyPath = resolveLegacyFile('manual-pm_v5.html');
     const htmlContent = fs
       .readFileSync(legacyPath, 'utf8')
       .replace(/<style[\s\S]*?<\/style>/gi, '');

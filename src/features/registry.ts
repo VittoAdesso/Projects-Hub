@@ -32,6 +32,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./manual-pm')),
   },
   {
+    id: 'refactoring-guru',
+    name: 'Refactorización y Patrones de Diseño',
+    shortDescription:
+      'Ruta guiada interactiva sobre Refactoring.Guru: deuda técnica, malos olores, técnicas de refactorización y patrones de diseño con seguimiento de progreso.',
+    route: '/refactoring-guru',
+    category: 'Arquitectura & Código Limpio',
+    badge: 'Ruta Guiada',
+    component: lazy(() => import('./refactoring-guru')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:

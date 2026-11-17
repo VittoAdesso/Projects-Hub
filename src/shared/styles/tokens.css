@@ -160,3 +160,51 @@
   --pm-border: #2e2a25;
   --pm-border-2: #3d3831;
 }
+
+.tool-refactoring-guru {
+  --background: #f2f5f9;
+  --foreground: #16202e;
+  --surface: #ffffff;
+  --surface-border: #d9e0ea;
+  --surface-hover: #e8eef5;
+  --muted: #eceff5;
+  --muted-foreground: #5a6778;
+
+  --accent: #5b34c7;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(91, 52, 199, 0.1);
+  --ring: #5b34c7;
+
+  --success: #0e8a6b;
+  --error: #b3261e;
+
+  --rg-ok: #0e8a6b;
+  --rg-ok-bg: rgba(14, 138, 107, 0.14);
+  --rg-bad: #b3261e;
+  --rg-bad-bg: rgba(179, 38, 30, 0.08);
+  --rg-code: #eceff5;
+}
+
+.dark .tool-refactoring-guru {
+  --background: #10151d;
+  --foreground: #e8edf4;
+  --surface: #18202b;
+  --surface-border: #2a3544;
+  --surface-hover: #1e2836;
+  --muted: #222c3a;
+  --muted-foreground: #9aa7b8;
+
+  --accent: #a98bff;
+  --accent-foreground: #10151d;
+  --accent-soft: rgba(169, 139, 255, 0.16);
+  --ring: #a98bff;
+
+  --success: #3dd0a6;
+  --error: #ff8a80;
+
+  --rg-ok: #3dd0a6;
+  --rg-ok-bg: rgba(61, 208, 166, 0.18);
+  --rg-bad: #ff8a80;
+  --rg-bad-bg: rgba(255, 138, 128, 0.12);
+  --rg-code: #222c3a;
+}
