@@ -112,6 +112,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./chuleta-stack')),
   },
   {
+    id: 'arquitecto-power-platform',
+    name: 'Arquitectura de Soluciones en Power Platform',
+    shortDescription:
+      'Ruta guiada de 7 módulos para arquitectos en Power Platform: requisitos, fit/gap, entornos ALM, Dataverse, seguridad, integraciones y Well-Architected.',
+    route: '/arquitecto-power-platform',
+    category: 'Arquitectura & Código Limpio',
+    badge: 'Ruta PL-600',
+    component: lazy(() => import('./arquitecto-power-platform')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:

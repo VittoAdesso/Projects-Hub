@@ -671,3 +671,54 @@
   --cs-le: #fbbf24;
   --cs-sv: #94a3b8;
 }
+
+.tool-arquitecto-power-platform {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  --background: #f2f5f9;
+  --foreground: #16202e;
+  --surface: #ffffff;
+  --surface-border: #d9e0ea;
+  --surface-hover: #eaeff6;
+  --muted: #eceff5;
+  --muted-foreground: #5a6778;
+
+  --accent: #5b34c7;
+  --accent-foreground: #ffffff;
+  --accent-soft: rgba(91, 52, 199, 0.12);
+  --ring: #5b34c7;
+
+  --ppa-bg: #f2f5f9;
+  --ppa-card: #ffffff;
+  --ppa-ink: #16202e;
+  --ppa-mut: #5a6778;
+  --ppa-line: #d9e0ea;
+  --ppa-acc: #5b34c7;
+  --ppa-ok: #0e8a6b;
+  --ppa-bad: #b3261e;
+  --ppa-code: #eceff5;
+}
+
+.dark .tool-arquitecto-power-platform {
+  --background: #10151d;
+  --foreground: #e8edf4;
+  --surface: #18202b;
+  --surface-border: #2a3544;
+  --surface-hover: #1e2836;
+  --muted: #222c3a;
+  --muted-foreground: #9aa7b8;
+
+  --accent: #a98bff;
+  --accent-foreground: #10151d;
+  --accent-soft: rgba(169, 139, 255, 0.16);
+  --ring: #a98bff;
+
+  --ppa-bg: #10151d;
+  --ppa-card: #18202b;
+  --ppa-ink: #e8edf4;
+  --ppa-mut: #9aa7b8;
+  --ppa-line: #2a3544;
+  --ppa-acc: #a98bff;
+  --ppa-ok: #3dd0a6;
+  --ppa-bad: #ff8a80;
+  --ppa-code: #222c3a;
+}
