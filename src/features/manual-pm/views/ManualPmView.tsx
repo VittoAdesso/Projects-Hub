@@ -14,7 +14,14 @@ import { ToolShell } from '@/shared/components/ToolShell';
 import { ScrollToTop } from '@/shared/components/ScrollToTop';
 
 export const ManualPmView: React.FC = () => {
-  const { activeSection, goToSection } = useManualPm();
+  const {
+    activeSection,
+    goToSection,
+    activeArea,
+    setActiveArea,
+    isKitOpen,
+    toggleKit,
+  } = useManualPm();
 
   return (
     <ToolShell
@@ -36,14 +43,25 @@ export const ManualPmView: React.FC = () => {
 
         {/* Active Section Content */}
         <main id="manual-content" className="pt-2">
-          {activeSection === 'inicio' && <InicioView onNavigate={goToSection} />}
+          {activeSection === 'inicio' && (
+            <InicioView
+              onNavigate={goToSection}
+              isKitOpen={isKitOpen}
+              onToggleKit={toggleKit}
+            />
+          )}
           {activeSection === 'rut' && <RutinaView />}
           {activeSection === 'proc' && <ProcedimientoView onNavigate={goToSection} />}
           {activeSection === 'dec' && <DecisionView onNavigate={goToSection} />}
           {activeSection === 'reu' && <ReunionesView />}
           {activeSection === 'inc' && <IncidenciasView />}
           {activeSection === 'cor' && <CorreosView />}
-          {activeSection === 'est' && <EstabilizacionView />}
+          {activeSection === 'est' && (
+            <EstabilizacionView
+              activeArea={activeArea}
+              onAreaChange={setActiveArea}
+            />
+          )}
         </main>
       </div>
 

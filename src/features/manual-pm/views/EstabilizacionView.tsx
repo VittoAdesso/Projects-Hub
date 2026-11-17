@@ -1,8 +1,17 @@
 import React from 'react';
 import { AreaTabs } from '../components/AreaTabs';
 import { Chip } from '@/shared/ui/chip';
+import type { AreaId } from '../types';
 
-export const EstabilizacionView: React.FC = () => {
+export interface EstabilizacionViewProps {
+  activeArea?: AreaId;
+  onAreaChange?: (area: AreaId) => void;
+}
+
+export const EstabilizacionView: React.FC<EstabilizacionViewProps> = ({
+  activeArea,
+  onAreaChange,
+}) => {
   return (
     <div id="est" className="sec on space-y-12">
       {/* Head */}
@@ -147,7 +156,7 @@ export const EstabilizacionView: React.FC = () => {
           El mismo patrón aterrizado en cuatro contextos distintos, como punto de partida para rellenar. Cambia la pestaña para ver cada uno.
         </p>
 
-        <AreaTabs />
+        <AreaTabs activeArea={activeArea} onAreaChange={onAreaChange} />
       </section>
 
       {/* Roadmap */}
@@ -157,21 +166,21 @@ export const EstabilizacionView: React.FC = () => {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-4 sm:p-5 shadow-sm">
-            <Chip variant="destructive">Corto plazo</Chip>
+            <Chip variant="red">Corto plazo</Chip>
             <p className="mt-2.5 mb-0 text-sm leading-relaxed text-[var(--pm-ink-2,#5c5650)]">
               Recuperar la operativa: máster, histórico, estabilización, responsables.
             </p>
           </div>
 
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-4 sm:p-5 shadow-sm">
-            <Chip variant="warning">Medio plazo</Chip>
+            <Chip variant="amber">Medio plazo</Chip>
             <p className="mt-2.5 mb-0 text-sm leading-relaxed text-[var(--pm-ink-2,#5c5650)]">
               Mejorar calidad: validaciones recurrentes, excepciones repetitivas.
             </p>
           </div>
 
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-4 sm:p-5 shadow-sm">
-            <Chip variant="success">Largo plazo</Chip>
+            <Chip variant="green">Largo plazo</Chip>
             <p className="mt-2.5 mb-0 text-sm leading-relaxed text-[var(--pm-ink-2,#5c5650)]">
               Más automatización: formalizar reglas, documentar excepciones, evaluar IA de apoyo.
             </p>

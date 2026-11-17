@@ -3,17 +3,27 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import fs from 'fs';
 import path from 'path';
-import { JSDOM } from 'jsdom';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 import { ManualPmView } from '@/features/manual-pm/views/ManualPmView';
 import { TEMPLATES } from '@/features/manual-pm/data/templates';
 import { SECTIONS } from '@/features/manual-pm/data/sections';
 import { AREAS } from '@/features/manual-pm/data/areas';
+
+const renderManualPm = () =>
+  render(
+    <ThemeProvider>
+      <MemoryRouter>
+        <ManualPmView />
+      </MemoryRouter>
+    </ThemeProvider>
+  );
 
 describe('Manual PM - Parity & Functionality Tests', () => {
   const writeTextMock = vi.fn().mockResolvedValue(undefined);
 
   beforeEach(() => {
     vi.clearAllMocks();
+    window.scrollTo = vi.fn();
     Object.defineProperty(navigator, 'clipboard', {
       value: {
         writeText: writeTextMock,
@@ -26,14 +36,15 @@ describe('Manual PM - Parity & Functionality Tests', () => {
   // 1. Text parity between legacy HTML templates and modern TEMPLATES data
   it('las 12 plantillas coinciden exactamente con el texto del HTML original', () => {
     const legacyPath = path.resolve(process.cwd(), 'legacy/manual-pm_v5.html');
-    const htmlContent = fs.readFileSync(legacyPath, 'utf8');
-    const dom = new JSDOM(htmlContent);
-    const document = dom.window.document;
+    const htmlContent = fs
+      .readFileSync(legacyPath, 'utf8')
+      .replace(/<style[\s\S]*?<\/style>/gi, '');
+    const doc = new DOMParser().parseFromString(htmlContent, 'text/html');
 
     expect(TEMPLATES.length).toBe(12);
 
     for (const tpl of TEMPLATES) {
-      const legacyEl = document.getElementById(tpl.id);
+      const legacyEl = doc.getElementById(tpl.id);
       expect(legacyEl).toBeDefined();
       expect(legacyEl).not.toBeNull();
 
@@ -47,11 +58,7 @@ describe('Manual PM - Parity & Functionality Tests', () => {
 
   // 2. Navigation between all 8 sections via tablist
   it('permite navegar entre las 8 secciones mediante las pestañas principales', () => {
-    render(
-      <MemoryRouter>
-        <ManualPmView />
-      </MemoryRouter>
-    );
+    renderManualPm();
 
     // Initial section is Inicio
     expect(document.getElementById('inicio')).toBeInTheDocument();
@@ -73,11 +80,7 @@ describe('Manual PM - Parity & Functionality Tests', () => {
 
   // 3. Internal navigation (data-go links)
   it('funciona la navegación por enlaces internos (data-go) entre secciones', () => {
-    render(
-      <MemoryRouter>
-        <ManualPmView />
-      </MemoryRouter>
-    );
+    renderManualPm();
 
     // From inicio -> proc via quick router
     const toProc = screen.getByText('Llega una solicitud nueva').closest('button')!;
@@ -100,7 +103,8 @@ describe('Manual PM - Parity & Functionality Tests', () => {
     expect(document.getElementById('dec')).toBeInTheDocument();
 
     // From dec -> cor
-    const toCorFromDec = screen.getByText('Correos');
+    const toCorFromDec = document.querySelector('#dec [data-go="cor"]')!;
+    expect(toCorFromDec).toBeInTheDocument();
     fireEvent.click(toCorFromDec);
     expect(document.getElementById('cor')).toBeInTheDocument();
 
@@ -120,11 +124,7 @@ describe('Manual PM - Parity & Functionality Tests', () => {
 
   // 4. Kit desplegable (toggle, steps, and emergency link)
   it('el kit de emergencia se despliega, muestra sus 4 pasos y permite navegar a incidencias', () => {
-    render(
-      <MemoryRouter>
-        <ManualPmView />
-      </MemoryRouter>
-    );
+    renderManualPm();
 
     // Initial state: kitBody is closed
     expect(document.getElementById('kitBody')).not.toBeInTheDocument();
@@ -150,11 +150,7 @@ describe('Manual PM - Parity & Functionality Tests', () => {
 
   // 5. Area tabs in Estabilización
   it('las pestañas de área en estabilización alternan correctamente los paneles', () => {
-    render(
-      <MemoryRouter>
-        <ManualPmView />
-      </MemoryRouter>
-    );
+    renderManualPm();
 
     const estTab = screen.getByRole('tab', { name: /07\s+Estabilización/i });
     fireEvent.click(estTab);
@@ -173,11 +169,7 @@ describe('Manual PM - Parity & Functionality Tests', () => {
 
   // 6. Copy button of EACH of the 12 templates copies the exact text
   it('el botón Copiar de CADA una de las 12 plantillas copia el texto exacto', async () => {
-    render(
-      <MemoryRouter>
-        <ManualPmView />
-      </MemoryRouter>
-    );
+    renderManualPm();
 
     // Test templates in 'inc' (c1, c2a, c2b, c2c)
     const incTab = screen.getByRole('tab', { name: /05\s+Incidencias/i });

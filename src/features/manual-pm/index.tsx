@@ -1,3 +1,3 @@
-export { ManualPmView as default } from './views/ManualPmView';
-export * from './types';
-export * from './hooks/useManualPm';
+import { ManualPmView } from './views/ManualPmView';
+
+export default ManualPmView;

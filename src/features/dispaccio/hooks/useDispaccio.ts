@@ -27,10 +27,6 @@ export function useDispaccio() {
     });
   }, []);
 
-  const clearSelection = useCallback(() => {
-    setSelectedTopics(new Set());
-  }, []);
-
   const togglePreview = useCallback((id: TopicId) => {
     setPreviewsOpen((prev) => {
       const next = new Set(prev);
@@ -102,10 +98,8 @@ export function useDispaccio() {
     setWindowIdx,
     horizonIdx,
     setHorizonIdx,
-    days,
     selectedTopics,
     toggleTopic,
-    clearSelection,
     previewsOpen,
     togglePreview,
     editorsOpen,

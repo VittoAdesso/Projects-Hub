@@ -141,7 +141,7 @@ export const ProcedimientoView: React.FC<ProcedimientoViewProps> = ({ onNavigate
                 <li>Control de versiones</li>
                 <li>Documentación funcional y técnica</li>
               </ul>
-              <Callout variant="accent" className="mt-3">
+              <Callout variant="default" className="mt-3">
                 Ningún desarrollo puede depender exclusivamente de una persona.
               </Callout>
             </div>
@@ -273,7 +273,7 @@ export const ProcedimientoView: React.FC<ProcedimientoViewProps> = ({ onNavigate
                   <tbody className="divide-y divide-[var(--pm-border,#e9e2d8)]">
                     <tr>
                       <td className="py-2.5 px-3.5">
-                        <Chip variant="destructive">Corrección</Chip>
+                        <Chip variant="red">Corrección</Chip>
                       </td>
                       <td className="py-2.5 px-3.5">
                         Algo que funcionaba ha dejado de funcionar (cambió un formato, una ruta, una credencial caducó).
@@ -284,7 +284,7 @@ export const ProcedimientoView: React.FC<ProcedimientoViewProps> = ({ onNavigate
                     </tr>
                     <tr>
                       <td className="py-2.5 px-3.5">
-                        <Chip variant="warning">Adaptación</Chip>
+                        <Chip variant="amber">Adaptación</Chip>
                       </td>
                       <td className="py-2.5 px-3.5">
                         El entorno cambió: nueva versión de SAP, nueva norma legal, una columna nueva en el origen. El proceso sigue, pero hay que ajustarlo.
@@ -295,7 +295,7 @@ export const ProcedimientoView: React.FC<ProcedimientoViewProps> = ({ onNavigate
                     </tr>
                     <tr>
                       <td className="py-2.5 px-3.5">
-                        <Chip variant="success">Evolutivo</Chip>
+                        <Chip variant="green">Evolutivo</Chip>
                       </td>
                       <td className="py-2.5 px-3.5">
                         Funciona bien, pero piden ampliarlo: más casuísticas, un paso nuevo, más volumen.

@@ -95,7 +95,7 @@ export const RutinaView: React.FC = () => {
           </div>
         </div>
 
-        <Callout variant="accent" className="mt-4">
+        <Callout variant="default" className="mt-4">
           Si nada es rojo, no se evalúa nada fuera del triaje semanal. Esa es la regla que te libera la cabeza.
         </Callout>
       </section>

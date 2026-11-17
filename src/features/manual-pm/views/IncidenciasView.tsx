@@ -27,7 +27,7 @@ export const IncidenciasView: React.FC = () => {
       {/* Protocolo Petición informal */}
       <section className="blk">
         <h2 className="font-serif text-2xl font-bold text-[var(--pm-ink,#1a1714)] mb-1 flex items-center gap-2.5 flex-wrap">
-          <Chip variant="warning">Protocolo</Chip>
+          <Chip variant="amber">Protocolo</Chip>
           <span>Petición informal</span>
         </h2>
         <p className="sub text-[15px] text-[var(--pm-ink-2,#5c5650)] mb-4">
@@ -49,7 +49,7 @@ export const IncidenciasView: React.FC = () => {
       {/* Protocolo Crisis: algo se ha roto */}
       <section className="blk">
         <h2 className="font-serif text-2xl font-bold text-[var(--pm-ink,#1a1714)] mb-1 flex items-center gap-2.5 flex-wrap">
-          <Chip variant="destructive">Protocolo</Chip>
+          <Chip variant="red">Protocolo</Chip>
           <span>Crisis: algo se ha roto</span>
         </h2>
         <p className="sub text-[15px] text-[var(--pm-ink-2,#5c5650)] mb-4">

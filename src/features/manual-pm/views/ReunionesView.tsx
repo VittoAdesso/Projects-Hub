@@ -50,7 +50,7 @@ export const ReunionesView: React.FC = () => {
                 <li>Detectar dónde dudan, dónde corrigen a mano, dónde &ldquo;depende&rdquo;.</li>
                 <li>Cerrar con: &ldquo;¿Esto es siempre así o hay días distintos?&rdquo;</li>
               </ul>
-              <Callout variant="accent">
+              <Callout variant="default">
                 Si al observar ves que el proceso cambia según el caso o &ldquo;depende del criterio de alguien&rdquo;, ya tienes la primera señal de que es Tipo 2 o 3 — no Tipo 1.
               </Callout>
             </div>

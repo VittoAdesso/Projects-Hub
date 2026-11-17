@@ -5,11 +5,26 @@ import { cn } from '@/shared/lib/utils';
 
 export interface KitDesplegableProps {
   onNavigate?: (sectionId: SectionId) => void;
+  isOpen?: boolean;
+  onToggle?: () => void;
   className?: string;
 }
 
-export const KitDesplegable: React.FC<KitDesplegableProps> = ({ onNavigate, className }) => {
-  const [isOpen, setIsOpen] = useState(false);
+export const KitDesplegable: React.FC<KitDesplegableProps> = ({
+  onNavigate,
+  isOpen: controlledOpen,
+  onToggle,
+  className,
+}) => {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const isOpen = controlledOpen ?? internalOpen;
+  const handleToggle = () => {
+    if (onToggle) {
+      onToggle();
+    } else {
+      setInternalOpen(!internalOpen);
+    }
+  };
 
   return (
     <div
@@ -25,7 +40,7 @@ export const KitDesplegable: React.FC<KitDesplegableProps> = ({ onNavigate, clas
         <button
           type="button"
           id="kitToggle"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={handleToggle}
           aria-expanded={isOpen}
           aria-controls="kitBody"
           className="kit-toggle bg-[var(--pm-red,#b91c1c)] text-white border-none font-sans text-[13px] font-semibold py-1.5 px-3.5 rounded-[var(--radius-sm,7px)] cursor-pointer shrink-0 hover:opacity-90 transition-opacity"
@@ -41,7 +56,7 @@ export const KitDesplegable: React.FC<KitDesplegableProps> = ({ onNavigate, clas
           </p>
           <div className="kit-steps flex flex-col gap-2.5">
             <div className="kit-step flex gap-3 items-start text-[14.5px] text-[var(--pm-ink-2,#5c5650)]">
-              <span className="kit-n shrink-0 w-[26px] height-[26px] h-[26px] rounded-full bg-[var(--pm-red,#b91c1c)] text-white flex items-center justify-center font-mono font-semibold text-[13px]">
+              <span className="kit-n shrink-0 w-[26px] h-[26px] rounded-full bg-[var(--pm-red,#b91c1c)] text-white flex items-center justify-center font-mono font-semibold text-[13px]">
                 1
               </span>
               <div>

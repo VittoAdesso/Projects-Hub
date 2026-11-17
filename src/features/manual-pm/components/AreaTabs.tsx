@@ -6,11 +6,26 @@ import { cn } from '@/shared/lib/utils';
 
 export interface AreaTabsProps {
   defaultArea?: AreaId;
+  activeArea?: AreaId;
+  onAreaChange?: (area: AreaId) => void;
   className?: string;
 }
 
-export const AreaTabs: React.FC<AreaTabsProps> = ({ defaultArea = 'rrhh', className }) => {
-  const [activeArea, setActiveArea] = useState<AreaId>(defaultArea);
+export const AreaTabs: React.FC<AreaTabsProps> = ({
+  defaultArea = 'rrhh',
+  activeArea: controlledArea,
+  onAreaChange,
+  className,
+}) => {
+  const [internalArea, setInternalArea] = useState<AreaId>(defaultArea);
+  const activeArea = controlledArea ?? internalArea;
+  const handleSelectArea = (id: AreaId) => {
+    if (onAreaChange) {
+      onAreaChange(id);
+    } else {
+      setInternalArea(id);
+    }
+  };
 
   const currentExample = AREA_EXAMPLES.find((a) => a.id === activeArea) ?? AREA_EXAMPLES[0]!;
 
@@ -26,7 +41,7 @@ export const AreaTabs: React.FC<AreaTabsProps> = ({ defaultArea = 'rrhh', classN
               type="button"
               aria-selected={isActive}
               data-area={area.id}
-              onClick={() => setActiveArea(area.id)}
+              onClick={() => handleSelectArea(area.id)}
               className={cn(
                 'py-1.5 px-3.5 rounded-full font-sans text-[13.5px] font-semibold transition-all border cursor-pointer',
                 isActive
@@ -46,7 +61,7 @@ export const AreaTabs: React.FC<AreaTabsProps> = ({ defaultArea = 'rrhh', classN
         data-area={currentExample.id}
         className="areapanel on card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-6 shadow-sm transition-all animate-in fade-in duration-200"
       >
-        <Chip variant="warning" className="mb-2">
+        <Chip variant="amber" className="mb-2">
           {currentExample.chip}
         </Chip>
         <p className="mt-3 mb-1.5 text-[15px] leading-relaxed text-[var(--pm-ink,#1a1714)]">

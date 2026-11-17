@@ -6,9 +6,15 @@ import { Chip } from '@/shared/ui/chip';
 
 export interface InicioViewProps {
   onNavigate: (sectionId: SectionId) => void;
+  isKitOpen?: boolean;
+  onToggleKit?: () => void;
 }
 
-export const InicioView: React.FC<InicioViewProps> = ({ onNavigate }) => {
+export const InicioView: React.FC<InicioViewProps> = ({
+  onNavigate,
+  isKitOpen,
+  onToggleKit,
+}) => {
   return (
     <div id="inicio" className="sec on space-y-12">
       {/* Hero */}
@@ -25,7 +31,11 @@ export const InicioView: React.FC<InicioViewProps> = ({ onNavigate }) => {
       </div>
 
       {/* Kit de emergencia */}
-      <KitDesplegable onNavigate={onNavigate} />
+      <KitDesplegable
+        onNavigate={onNavigate}
+        isOpen={isKitOpen}
+        onToggle={onToggleKit}
+      />
 
       {/* Por dónde empiezo */}
       <section className="blk">
@@ -263,7 +273,7 @@ export const InicioView: React.FC<InicioViewProps> = ({ onNavigate }) => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-6 shadow-sm">
-            <Chip variant="default">Regla Nº1</Chip>
+            <Chip variant="accent">Regla Nº1</Chip>
             <p className="mt-3 text-[15px] leading-relaxed text-[var(--pm-ink,#1a1714)]">
               No se aceptan fechas en la solicitud inicial. Primera respuesta, siempre:{' '}
               <em>
@@ -272,7 +282,7 @@ export const InicioView: React.FC<InicioViewProps> = ({ onNavigate }) => {
             </p>
           </div>
           <div className="card bg-[var(--pm-surface,#ffffff)] border border-[var(--pm-border,#e9e2d8)] rounded-[var(--radius-xl,16px)] p-6 shadow-sm">
-            <Chip variant="default">Regla Nº2 · Capacidad</Chip>
+            <Chip variant="accent">Regla Nº2 · Capacidad</Chip>
             <p className="mt-3 text-[15px] leading-relaxed text-[var(--pm-ink,#1a1714)]">
               Máximo <strong>2 proyectos activos por recurso</strong> — esto te incluye a ti. El resto, en backlog. Backlog no es abandono: es capacidad pendiente de asignar.
             </p>
