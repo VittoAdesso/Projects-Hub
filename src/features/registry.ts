@@ -122,6 +122,16 @@ export const toolsRegistry: readonly ToolDefinition[] = [
     component: lazy(() => import('./arquitecto-power-platform')),
   },
   {
+    id: 'guia-power-platform',
+    name: 'Guía Maestra: Arquitectura Power Platform',
+    shortDescription:
+      'Consulta rápida con 3 modos (Estudio, Reunión, Auditoría): muros duros, simulador de decisiones, 6 prompts, configuraciones, checklists y notas.',
+    route: '/guia-power-platform',
+    category: 'Arquitectura & Código Limpio',
+    badge: 'Guía Maestra',
+    component: lazy(() => import('./guia-power-platform')),
+  },
+  {
     id: 'ejemplo',
     name: 'Herramienta de Ejemplo',
     shortDescription:
